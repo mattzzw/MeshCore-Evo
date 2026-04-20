@@ -415,6 +415,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../number_allocations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Number Allocations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../packet_format/" class="md-nav__link">
         
   
@@ -1223,7 +1250,7 @@
 </tr>
 </tbody>
 </table>
-<h1 id="group-text-message-datagram">Group text message / datagram</h1>
+<h1 id="group-text-message">Group text message</h1>
 <table>
 <thead>
 <tr>
@@ -1251,6 +1278,60 @@
 </tbody>
 </table>
 <p>The plaintext contained in the ciphertext matches the format described in <a href="#plain-text-message">plain text message</a>. Specifically, it consists of a four byte timestamp, a flags byte, and the message. The flags byte will generally be <code>0x00</code> because it is a "plain text message". The message will be of the form <code>&lt;sender name&gt;: &lt;message body&gt;</code> (eg., <code>user123: I'm on my way</code>).</p>
+<h1 id="group-datagram">Group datagram</h1>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Size (bytes)</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>channel hash</td>
+<td>1</td>
+<td>first byte of SHA256 of channel's shared key</td>
+</tr>
+<tr>
+<td>cipher MAC</td>
+<td>2</td>
+<td>MAC for encrypted data in next field</td>
+</tr>
+<tr>
+<td>ciphertext</td>
+<td>rest of payload</td>
+<td>encrypted data, see below for details</td>
+</tr>
+</tbody>
+</table>
+<p>The data contained in the ciphertext uses the format below:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Size (bytes)</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data type</td>
+<td>2</td>
+<td>Identifier for type of data. (See number_allocations.md)</td>
+</tr>
+<tr>
+<td>data len</td>
+<td>1</td>
+<td>byte length of data</td>
+</tr>
+<tr>
+<td>data</td>
+<td>rest of payload</td>
+<td>(depends on data type)</td>
+</tr>
+</tbody>
+</table>
 <h1 id="control-data">Control data</h1>
 <table>
 <thead>

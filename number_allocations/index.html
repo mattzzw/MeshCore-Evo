@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://meshcore-dev.github.io/meshcore/qr_codes/">
+        <link rel="canonical" href="https://meshcore-dev.github.io/meshcore/number_allocations/">
       
       
-        <link rel="prev" href="../payloads/">
+        <link rel="prev" href="../nrf52_power_management/">
       
       
-        <link rel="next" href="../stats_binary_frames/">
+        <link rel="next" href="../packet_format/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>QR Codes - MeshCore Docs</title>
+        <title>Number Allocations - MeshCore Docs</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#qr-codes" class="md-skip">
+        <a href="#number-allocations" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              QR Codes
+              Number Allocations
             
           </span>
         </div>
@@ -412,10 +412,19 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../number_allocations/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -431,6 +440,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -493,37 +503,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    QR Codes
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../qr_codes/" class="md-nav__link">
         
   
   
@@ -539,48 +522,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#add-channel" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Add Channel
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-contact" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Add Contact
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -659,36 +600,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#add-channel" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Add Channel
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#add-contact" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Add Contact
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -704,7 +615,7 @@
 
 
   
-    <a href="https://github.com/meshcore-dev/meshcore/edit/main/docs/qr_codes.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+    <a href="https://github.com/meshcore-dev/meshcore/edit/main/docs/number_allocations.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -712,33 +623,35 @@
   
 
 
-<h1 id="qr-codes">QR Codes</h1>
-<p>This document provides an overview of QR Code formats that can be used for sharing MeshCore channels and contacts. The formats described below are supported by the MeshCore mobile app.</p>
-<h2 id="add-channel">Add Channel</h2>
-<p><strong>Example URL</strong>:</p>
-<pre><code>meshcore://channel/add?name=Public&amp;secret=8b3387e9c5cdea6ac9e5edbaa115cd72
-</code></pre>
-<p><strong>Parameters</strong>:</p>
-<ul>
-<li><code>name</code>: Channel name (URL-encoded if needed)</li>
-<li><code>secret</code>: 16-byte secret represented as 32 hex characters</li>
-</ul>
-<h2 id="add-contact">Add Contact</h2>
-<p><strong>Example URL</strong>:</p>
-<pre><code>meshcore://contact/add?name=Example+Contact&amp;public_key=9cd8fcf22a47333b591d96a2b848b73f457b1bb1a3ea2453a885f9e5787765b1&amp;type=1
-</code></pre>
-<p><strong>Parameters</strong>:</p>
-<ul>
-<li><code>name</code>: Contact name (URL-encoded if needed)</li>
-<li><code>public_key</code>: 32-byte public key represented as 64 hex characters</li>
-<li><code>type</code>: numeric contact type<ul>
-<li><code>1</code>: Companion</li>
-<li><code>2</code>: Repeater</li>
-<li><code>3</code>: Room Server</li>
-<li><code>4</code>: Sensor</li>
-</ul>
-</li>
-</ul>
+<h1 id="number-allocations">Number Allocations</h1>
+<p>This document lists unique numbers/identifiers used in various MeshCore protcol payloads.</p>
+<h1 id="group-data-types">Group Data Types</h1>
+<p>The <code>PAYLOAD_TYPE_GRP_DATA</code> payloads have a 16-bit data-type field, which identifies which application the packet is for.</p>
+<p>To make sure multiple applications can function without interfering with each other, the table below is for reserving various ranges of data-type values. Just modify this table, adding a row, then submit a PR to have it authorised/merged.</p>
+<p>NOTE: the range FF00 - FFFF is for use while you're developing, doing POC, and for these you don't need to request to use/allocate.</p>
+<p>Once you have a working app/project, you need to be able to demonstrate it exists/works, and THEN request type IDs. So, just use the testing/dev range while developing, then request IDs before you transition to publishing your project.</p>
+<table>
+<thead>
+<tr>
+<th>Data-Type range</th>
+<th>App name</th>
+<th>Contact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0000 - 00FF</td>
+<td>-reserved for internal use-</td>
+<td></td>
+</tr>
+<tr>
+<td>FF00 - FFFF</td>
+<td>-reserved for testing/dev-</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>(add rows, inside the range 0100 - FEFF for custom apps)</p>
 
 
 

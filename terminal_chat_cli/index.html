@@ -413,6 +413,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../number_allocations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Number Allocations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../packet_format/" class="md-nav__link">
         
   
@@ -611,9 +638,12 @@
 <pre><code>set lon {longitude}
 </code></pre>
 <p>Sets your advertisement map longitude. (decimal degrees)</p>
+<pre><code>set dutycycle {percent}
+</code></pre>
+<p>Sets the transmit duty cycle limit (1-100%). Example: <code>set dutycycle 10</code> for 10%.</p>
 <pre><code>set af {air-time-factor}
 </code></pre>
-<p>Sets the transmit air-time-factor.</p>
+<p>Sets the transmit air-time-factor. Deprecated — use <code>set dutycycle</code> instead.</p>
 <pre><code>time {epoch-secs}
 </code></pre>
 <p>Set the device clock using UNIX epoch seconds. Example:  time 1738242833</p>

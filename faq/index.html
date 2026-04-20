@@ -1229,15 +1229,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#71-q-how-to-update-nrf-rak-t114-seed-xiao-repeater-and-room-server-firmware-over-the-air-using-the-new-simpler-dfu-app" class="md-nav__link">
+  <a href="#71-q-how-to-update-nrf-rak-t114-seed-xiao-companion-repeater-and-room-server-firmware-over-the-air-using-the-new-simpler-dfu-app" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7.1. Q: How to update nRF (RAK, T114, Seed XIAO) repeater and room server firmware over the air using the new simpler DFU app?
+        7.1. Q: How to update nRF (RAK, T114, Seed XIAO) companion, repeater and room server firmware over the air using the new simpler DFU app?
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="7.1. Q: How to update nRF (RAK, T114, Seed XIAO) repeater and room server firmware over the air using the new simpler DFU app?">
+    <nav class="md-nav" aria-label="7.1. Q: How to update nRF (RAK, T114, Seed XIAO) companion, repeater and room server firmware over the air using the new simpler DFU app?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1377,6 +1377,33 @@
     
   
     nRF52 Power Management
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../number_allocations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Number Allocations
   
 
     
@@ -2386,15 +2413,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#71-q-how-to-update-nrf-rak-t114-seed-xiao-repeater-and-room-server-firmware-over-the-air-using-the-new-simpler-dfu-app" class="md-nav__link">
+  <a href="#71-q-how-to-update-nrf-rak-t114-seed-xiao-companion-repeater-and-room-server-firmware-over-the-air-using-the-new-simpler-dfu-app" class="md-nav__link">
     <span class="md-ellipsis">
       
-        7.1. Q: How to update nRF (RAK, T114, Seed XIAO) repeater and room server firmware over the air using the new simpler DFU app?
+        7.1. Q: How to update nRF (RAK, T114, Seed XIAO) companion, repeater and room server firmware over the air using the new simpler DFU app?
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="7.1. Q: How to update nRF (RAK, T114, Seed XIAO) repeater and room server firmware over the air using the new simpler DFU app?">
+    <nav class="md-nav" aria-label="7.1. Q: How to update nRF (RAK, T114, Seed XIAO) companion, repeater and room server firmware over the air using the new simpler DFU app?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2828,7 +2855,7 @@ https://github.com/meshcore-dev/MeshCore/blob/main/src/Packet.h#L19</p>
 #define PAYLOAD_TYPE_TXT_MSG 0x02 // a plain text message (prefixed with dest/src hashes, MAC) (enc data: timestamp, text)
 #define PAYLOAD_TYPE_ACK 0x03 // a simple ack #define PAYLOAD_TYPE_ADVERT 0x04 // a node advertising its Identity
 #define PAYLOAD_TYPE_GRP_TXT 0x05 // an (unverified) group text message (prefixed with channel hash, MAC) (enc data: timestamp, "name: msg")
-#define PAYLOAD_TYPE_GRP_DATA 0x06 // an (unverified) group datagram (prefixed with channel hash, MAC) (enc data: timestamp, blob)
+#define PAYLOAD_TYPE_GRP_DATA 0x06 // an (unverified) group datagram (prefixed with channel hash, MAC) (enc data: data_type, data_len, blob)
 #define PAYLOAD_TYPE_ANON_REQ 0x07 // generic request (prefixed with dest_hash, ephemeral pub_key, MAC) (enc data: ...)
 #define PAYLOAD_TYPE_PATH 0x08 // returned path (prefixed with dest/src hashes, MAC) (enc data: path, extra)
 </code></pre>
@@ -3043,7 +3070,7 @@ https://www.austinmesh.org/learn/meshcore-vs-meshtastic/</p>
 <code># setfacl -m u:YOUR_USER_HERE:rw /dev/ttyUSB0</code></p>
 <hr />
 <h2 id="7-other-questions">7. Other Questions:</h2>
-<h3 id="71-q-how-to-update-nrf-rak-t114-seed-xiao-repeater-and-room-server-firmware-over-the-air-using-the-new-simpler-dfu-app">7.1. Q: How to update nRF (RAK, T114, Seed XIAO) repeater and room server firmware over the air using the new simpler DFU app?</h3>
+<h3 id="71-q-how-to-update-nrf-rak-t114-seed-xiao-companion-repeater-and-room-server-firmware-over-the-air-using-the-new-simpler-dfu-app">7.1. Q: How to update nRF (RAK, T114, Seed XIAO) companion, repeater and room server firmware over the air using the new simpler DFU app?</h3>
 <p><strong>A:</strong> The steps below work on both Android and iOS as nRF has made both apps' user interface the same on both platforms:</p>
 <ol>
 <li>Download nRF's DFU app from iOS App Store or Android's Play Store, you can find the app by searching for <code>nrf dfu</code>, the app's full name is <code>nRF Device Firmware Update</code></li>
@@ -3057,8 +3084,15 @@ https://www.austinmesh.org/learn/meshcore-vs-meshtastic/</p>
 <li>Select the device you want to update. If the device you want to update is not on the list, try enabling<code>OTA</code> on the device again</li>
 <li>If the device is not found, enable <code>Force Scanning</code> in the DFU app</li>
 <li>Tab the <code>Upload</code> to begin OTA update</li>
-<li>If it fails, try turning off and on Bluetooth on your phone.  If that doesn't work, try rebooting your phone.</li>
-<li>Wait for the update to complete.  It can take a few minutes.</li>
+<li>If it fails, try turning off and on Bluetooth on your phone.  If that doesn't work, try rebooting your phone.  If you keep getting failures at the "Enabling Bootloader" step, try forgetting the NRF board in your IOS or Andriod device's bluetooth settings and re-pair it through the DFU app.</li>
+<li>Wait for the update to complete.  It can take a few minutes.   </li>
+<li>It is strongly recommended that you install and use the OTAFIX bootloader at https://github.com/oltaco/Adafruit_nRF52_Bootloader_OTAFIX. </li>
+<li>To update a companion node over OTA, it must be running companion firmware v1.15 or greater.   </li>
+<li>Please see the Meshcore Blog for additional information on OTA firmware flashing: <ul>
+<li>https://blog.meshcore.io/2026/04/06/otafix-bootloader</li>
+<li>https://blog.meshcore.io/2026/04/02/nrf-ota-update</li>
+</ul>
+</li>
 </ol>
 <h4 id="711-q-can-i-update-seeed-studio-wio-tracker-l1-pro-using-ota">7.1.1 Q: Can I update Seeed Studio Wio Tracker L1 Pro using OTA?</h4>
 <p><strong>A:</strong>  You can flash this safer bootloader to the Wio Tracker L1 Pro
@@ -3083,7 +3117,7 @@ https://github.com/oltaco/Adafruit_nRF52_Bootloader_OTAFIX</p>
 - Seeed Studio Wio Tracker L1
 - Seeed Studio XIAO nRF52840 BLE
 - Seeed Studio XIAO nRF52840 BLE SENSE
-- RAK 4631 (See note)
+- RAK 4631 
 - RAK WisMesh Tag (new 28/11/2025)</p>
 <h3 id="74-q-are-the-meshcore-logo-and-font-available">7.4. Q: are the MeshCore logo and font available?</h3>
 <p><strong>A:</strong> Yes, it is on the MeshCore github repo here:
