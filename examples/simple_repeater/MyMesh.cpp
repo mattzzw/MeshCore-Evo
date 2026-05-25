@@ -560,8 +560,7 @@ bool MyMesh::filterRecvFloodPacket(mesh::Packet* pkt) {
     recv_pkt_region = region_map.findMatch(pkt, REGION_DENY_FLOOD);
   } else if (pkt->getRouteType() == ROUTE_TYPE_FLOOD) {
       if ((pkt->getPayloadType() == PAYLOAD_TYPE_GRP_TXT ||
-           pkt->getPayloadType() == PAYLOAD_TYPE_GRP_DATA ||
-           pkt->getPayloadType() == PAYLOAD_TYPE_ADVERT) &&
+           pkt->getPayloadType() == PAYLOAD_TYPE_GRP_DATA) &&
           region_map.getWildcard().flags & REGION_DENY_FLOOD) {
       recv_pkt_region = NULL;
     } else {
