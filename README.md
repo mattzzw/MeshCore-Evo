@@ -1,3 +1,6 @@
+## Important update
+
+❗ 👉  With firmware 1.16.0 and the ability to manage flood traffic using `flood.max.advert` and `flood.max.unscoped` this comunity firmware has become obsolete, finally - which is a good thing. This fork was always meant to be a temporary fix anyway. 👈
 
 ## About MeshCore-Evo
 
